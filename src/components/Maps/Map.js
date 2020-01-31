@@ -5,21 +5,24 @@ import "./Map.css";
 const Map = ({ earthquakes }) => {
   const defaultZoom = 6;
 
-  // object to visualize the earthquakes 
-  const Circle = ({radius, text}) => {
-    return <div style={{ width: radius, height: radius }} className="Circle"><p className="magnitudeText">{text}</p></div>;
-  }
+  // object to visualize the earthquakes
+  const Circle = ({ radius, text }) => {
+    return (
+      <div style={{ width: radius, height: radius }} className="Circle">
+        <p className="magnitudeText">{text}</p>
+      </div>
+    );
+  };
 
   // creates Circle objects with the props lat and lng for the location and radius to visualize the earthquakes
   const Earthquakes = () => {
-    console.log(earthquakes)
     return earthquakes.map(earthquake => (
       <Circle
         lat={earthquake.geometry.coordinates[1]}
         lng={earthquake.geometry.coordinates[0]}
         key={earthquake.id}
         // this radius-value was chosen to show small earthquakes as small and bigger ones with a wider circle
-        radius={(earthquake.properties.mag * earthquake.properties.mag)}
+        radius={earthquake.properties.mag * earthquake.properties.mag}
       />
     ));
   };
@@ -32,7 +35,6 @@ const Map = ({ earthquakes }) => {
         defaultZoom={defaultZoom}>
         {Earthquakes()}
       </GoogleMapReact>
-      
     </div>
   );
 };
