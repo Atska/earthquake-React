@@ -1,8 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-<<<<<<< HEAD
-
-### About
+### Introduction
 
 This is a project which shows the latest earthquakes on google maps.
 
@@ -27,9 +23,4 @@ Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### What is missing?
-
-- There are no test yet.
-- onHover event to show details of the earthquakes. Otherwise one could make a table with all the infomation and resize the map.
+You will also see any lint errors in the console
